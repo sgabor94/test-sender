@@ -6,7 +6,14 @@
 	<groupId>com.gsomogyi</groupId>
 	<artifactId>test-sender</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <modules>
+        <module>test-sender-web</module>
+		<module>test-sender-model</module>
+		<module>test-sender-repository</module>
+		<module>test-sender-dto</module>
+		<module>test-sender-service</module>
+	</modules>
+    <packaging>pom</packaging>
 
 	<name>test-sender</name>
 	<description>Spring Boot test sender app with Angular frontend</description>
@@ -72,15 +79,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
 
 </project>
