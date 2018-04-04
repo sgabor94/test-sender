@@ -1,0 +1,12 @@
+<h3>Messages</h3>
+<ul class="list-group">
+  <li *ngFor="let message of messages"
+      class="list-group-item">
+    <div class="container">
+      <div class="col-lg-1">{{message.id}}</div>
+      <div class="col-lg-2">{{message.content}}</div>
+      <div class="col-lg-2">{{message.source}}</div>
+      <div class="col-lg-2">{{message.sendDate}}</div>
+    </div>
+  </li>
+</ul>
