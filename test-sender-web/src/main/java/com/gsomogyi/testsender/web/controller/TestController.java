@@ -29,7 +29,7 @@ public class TestController {
     @ResponseStatus(HttpStatus.OK)
     public String postMessage(@RequestBody TestMessage testMessage) {
         logger.info("postMessage called, testMessage: {}", testMessage);
-        messageSender.sendMessage(testMessage, "AMQP_IN");
+        messageSender.sendMessage(testMessage, "INBOX");
         testMessageService.save(testMessage);
         return "Message posted";
     }
