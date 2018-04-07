@@ -1,0 +1,32 @@
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="message">Message</label>
+    <div class="col-sm-4">
+      <input [(ngModel)]="testMessage.message" type="text" class="form-control" id="message" name="message">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="source">Source</label>
+    <div class="col-sm-4">
+      <select [(ngModel)]="testMessage.source" class="form-control" id="source" name="source">
+        <option value="Source 1">Source 1</option>
+        <option value="Source 2">Source 2</option>
+        <option value="Source 3">Source 3</option>
+        <option value="Source 4">Source 4</option>
+        <option value="Source 5">Source 5</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="dateReceived">Date received</label>
+    <div class="col-sm-4">
+      <input [(ngModel)]="testMessage.dateReceived" type="date" class="form-control" id="dateReceived"
+             name="dateReceived">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+    </div>
+  </div>
+</form>

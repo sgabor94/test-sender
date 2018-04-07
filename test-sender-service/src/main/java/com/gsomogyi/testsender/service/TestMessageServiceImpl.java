@@ -7,17 +7,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
-public class TestMessageCRUDServiceImpl implements TestMessageCRUDService {
+public class TestMessageServiceImpl implements TestMessageService {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestMessageCRUDServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestMessageServiceImpl.class);
 
     private final TestMessageRepository testMessageRepository;
 
     @Autowired
-    public TestMessageCRUDServiceImpl(TestMessageRepository testMessageRepository) {
+    public TestMessageServiceImpl(TestMessageRepository testMessageRepository) {
         this.testMessageRepository = testMessageRepository;
     }
 

@@ -2,7 +2,7 @@ package com.gsomogyi.testsender.service;
 
 import com.gsomogyi.testsender.model.TestMessage;
 
-public interface TestMessageCRUDService {
+public interface TestMessageService {
 
     Iterable<TestMessage> findAll();
 

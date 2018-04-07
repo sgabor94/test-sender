@@ -14,12 +14,14 @@ import {AlertService} from './service/alert.service';
 import {CommonService} from './service/common.service';
 import { MessagesComponent } from './component/messages/messages.component';
 import {TestService} from './service/test.service';
+import { TestComponent } from './component/test/test.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'messages', component: MessagesComponent},
+  {path: 'send', component: TestComponent},
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     AlertComponent,
-    MessagesComponent
+    MessagesComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
