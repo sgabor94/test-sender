@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TestMessage} from '../../model/testmessage.model';
 import {TestService} from '../../service/test.service';
 import {AlertService} from '../../service/alert.service';
+import {Message} from '../../model/message.model';
 
 @Component({
   selector: 'app-test',
@@ -10,18 +10,18 @@ import {AlertService} from '../../service/alert.service';
 })
 export class TestComponent implements OnInit {
 
-  testMessage: TestMessage;
+  message: Message;
 
   constructor(private testService: TestService, private alertService: AlertService) {
   }
 
   ngOnInit() {
-    this.testMessage = new TestMessage();
+    this.message = new Message();
   }
 
   sendMessage() {
-    if (this.testMessage.message != null && this.testMessage.dateReceived != null) {
-      this.testService.sendMessage(this.testMessage).subscribe(
+    if (this.message.content != null && this.message.sendDate != null) {
+      this.testService.sendMessage(this.message).subscribe(
         () => {
           this.alertService.success('Message sent!');
         },

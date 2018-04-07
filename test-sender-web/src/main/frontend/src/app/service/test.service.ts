@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Headers, Http, RequestOptions} from '@angular/http';
 
 import {environment} from '../../environments/environment';
-import {TestMessage} from '../model/testmessage.model';
+import {Message} from '../model/message.model';
 
 export const TEST_API = environment.apiUrl;
 
@@ -19,10 +19,10 @@ export class TestService {
     return this.http.get(url, options);
   }
 
-  sendMessage(testMessage: TestMessage) {
+  sendMessage(message: Message) {
     const URL: string = TEST_API + '/send';
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({headers: headers});
-    return this.http.post(URL, testMessage, options);
+    return this.http.post(URL, message, options);
   }
 }

@@ -27,13 +27,13 @@ public class TestMessageServiceImpl implements TestMessageService {
 
     @Override
     public TestMessage save(TestMessage testMessage) {
-        logger.info("TestMessae saved with id: {}", testMessage);
+        logger.info("TestMessage saved with id: {}", testMessage);
         return testMessageRepository.save(testMessage);
     }
 
     @Override
     public void delete(TestMessage testMessage) {
-        logger.info("TestMessae deleted with id: {}", testMessage);
+        logger.info("TestMessage deleted with id: {}", testMessage);
         testMessageRepository.delete(testMessage);
     }
 }
