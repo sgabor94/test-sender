@@ -1,5 +1,6 @@
 package com.gsomogyi.testsender.web.controller;
 
+import com.gsomogyi.testsender.dto.TestMessageDTO;
 import com.gsomogyi.testsender.model.TestMessage;
 import com.gsomogyi.testsender.service.TestMessageService;
 import com.gsomogyi.testsender.service.jms.MessageSender;
@@ -27,7 +28,7 @@ public class TestController {
 
     @PostMapping("/send")
     @ResponseStatus(HttpStatus.OK)
-    public String postMessage(@RequestBody TestMessage testMessage) {
+    public String postMessage(@RequestBody TestMessageDTO testMessage) {
         logger.info("postMessage called, testMessage: {}", testMessage);
         messageSender.sendMessage(testMessage, "INBOX");
         testMessageService.save(testMessage);

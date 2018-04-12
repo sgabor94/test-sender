@@ -10,6 +10,14 @@ import java.util.Date;
 @Entity
 public class TestMessage implements Serializable {
 
+    public TestMessage() {}
+
+    public TestMessage(String content, String source, Date sendDate) {
+        this.content = content;
+        this.source = source;
+        this.sendDate = sendDate;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,5 +1,6 @@
 package com.gsomogyi.testsender.service;
 
+import com.gsomogyi.testsender.dto.TestMessageDTO;
 import com.gsomogyi.testsender.model.TestMessage;
 import com.gsomogyi.testsender.repository.TestMessageRepository;
 import org.slf4j.Logger;
@@ -26,9 +27,10 @@ public class TestMessageServiceImpl implements TestMessageService {
 
 
     @Override
-    public TestMessage save(TestMessage testMessage) {
+    public TestMessageDTO save(TestMessageDTO testMessage) {
         logger.info("TestMessage saved with id: {}", testMessage);
-        return testMessageRepository.save(testMessage);
+        TestMessage saved = testMessageRepository.save(new TestMessage(testMessage.getContent(), testMessage.getSource(), testMessage.getSendDate()));
+        return new TestMessageDTO(saved.getContent(), saved.getSource(), saved.getSendDate());
     }
 
     @Override

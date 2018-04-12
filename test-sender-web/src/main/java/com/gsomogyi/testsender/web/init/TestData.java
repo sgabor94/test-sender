@@ -1,6 +1,6 @@
 package com.gsomogyi.testsender.web.init;
 
-import com.gsomogyi.testsender.model.TestMessage;
+import com.gsomogyi.testsender.dto.TestMessageDTO;
 import com.gsomogyi.testsender.service.TestMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public class TestData {
     }
 
     void initTestData() {
-        TestMessage testMessage = new TestMessage();
+        TestMessageDTO testMessage = new TestMessageDTO();
         testMessage.setContent("Test Message 1");
         testMessage.setSendDate(new Date());
         testMessage.setSource("Source1");
